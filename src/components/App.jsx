@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import ContactForm from './ContactForm';
+// import ContactForm from './ContactForm';
 import ContactList from './ContactList';
+import SignUpForm from './ContactForm';
 import Filter from './Filter';
 import shortid from 'shortid';
 
@@ -64,7 +65,7 @@ export class App extends Component {
     return (
       <div>
         <h1>Phonebook</h1>
-        <ContactForm onSubmit={this.formSubmitHandler} />
+        <SignUpForm onSubmit={this.formSubmitHandler} />
         <h2>Contacts</h2>
         <Filter value={filter} onChange={this.changeFilter} />
         {contacts.length > 0 ? (
