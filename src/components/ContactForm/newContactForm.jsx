@@ -25,7 +25,7 @@ const ContactFormWrap = styled.form`
 
 function SignUpForm() {
   const [name, setName] = useState('');
-  const [number, setNomber] = useState('');
+  const [number, setNumber] = useState('');
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -35,7 +35,7 @@ function SignUpForm() {
         setName(value);
         break;
       case 'number':
-        setNomber(value);
+        setNumber(value);
         break;
       default:
         break;
@@ -45,12 +45,16 @@ function SignUpForm() {
   const handleSubmit = event => {
     event.preventDefault();
 
-    this.props.onSubmit(this.state);
-    this.reset();
+    const data = { name, number };
+    console.log(data);
+    return data;
+
+    // this.props.onSubmit(data);
+    // this.reset();
   };
 
   return (
-    <ContactFormWrap onSubmit={handleSubmit}>
+    <ContactFormWrap onSubmit={() => handleSubmit()}>
       <label>
         <p>Name</p>
         <input
