@@ -1,1 +1,1 @@
-export { default } from './newContactForm';
+export { default } from './ContactForm';
